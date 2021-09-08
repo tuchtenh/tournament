@@ -35,15 +35,12 @@ void Team::Draw(Team &against) {
 int Team::getWins() { return Wins; }
 int Team::getLosses() { return Losses; }
 int Team::getDraws() { return Draws; }
-int Team::getPoints() { return Points; }
+int Team::getPoints() const { return Points; }
 
 std::string Team::getNation() {
     return Nation;
 }
 
-//bool operator<(Team& team1, Team& team2) {
-//    return team1.getPoints() < team2.getPoints();
-//}
 
 
 

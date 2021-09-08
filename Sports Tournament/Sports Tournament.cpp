@@ -141,10 +141,28 @@ int main()
     portugal.Loss(germany);
     spain.Draw(poland);
 
+    //________Matchday 3________
+    // june 20
+    italy.Win(wales);
+    switzerland.Win(turkey);
+    // june 21
+    ukraine.Loss(austria);
+    northmacedonia.Loss(netherlands);
+    finland.Loss(belgium);
+    russia.Loss(denmark);
+    // june 22
+    czech.Loss(england);
+    croatia.Win(scotland);
+    // june 23
+    sweden.Win(poland);
+    slovakia.Loss(spain);
+    germany.Draw(hungary);
+    portugal.Draw(france);
+
     // Display group names and teams
     for (Group* g: groups) {
         std::vector<Team*> gteams = g->getGroup();
-        //std::sort(gteams.begin(), gteams.end());
+        std::sort(gteams.begin(), gteams.end(), more_than_key());
         std::cout << "____Group " <<  g->getGroupName() << "____" << std::right << std::setw(9) << "Won" << std::setw(9) << "Drawn" << std::setw(9) << "Lost" << std::setw(9) << "Points" << std::endl;
         for (int i = 1; i <= gteams.size(); i++) {
             std::cout  << i << ". " << std::left << std::setw(19) << gteams.at(i - 1)->getNation() << std::left << std::setw(8) << gteams.at(i - 1)->getWins() << std::setw(9) << gteams.at(i - 1)->getDraws() << std::setw(8) << gteams.at(i - 1)->getLosses() << gteams.at(i - 1)->getPoints() << std::endl;
